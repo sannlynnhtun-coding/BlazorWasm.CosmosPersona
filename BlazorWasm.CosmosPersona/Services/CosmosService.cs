@@ -14,8 +14,13 @@ namespace BlazorWasm.CosmosPersona.Services
         }
         public async Task<CosmosQuestionAndAnswerModel> GetData()
         {
-            var result = await GetData<CosmosQuestionAndAnswerModel>("data/cosmos-question-and-answer.json");
-            return result;
+            var result = await GetData<List<QuestionModel>>("data/cosmos.json");
+            var result2 = await GetData<List<AnswerModel>>("data/cosmos-images.json");
+            return new CosmosQuestionAndAnswerModel
+            {
+                questions = result!,
+                images = result2!,
+            };
         }
         private async Task<T?> GetData<T>(string filePath)
         {
