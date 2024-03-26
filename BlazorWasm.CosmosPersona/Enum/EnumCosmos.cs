@@ -2,6 +2,7 @@
 {
     public enum EnumCosmos
     {
+        Non,
         Question,
         Answer
     }
