@@ -1,26 +1,53 @@
 ﻿@page "/"
+@using BlazorWasm.CosmosPersona.Models
 
-<div class="start-page" id="start-page">
-    <!--h1>What cosmic ingredient do you taste like?</h1-->
-    <h1>Cosmos Persona</h1>
-    <p>Enter a journey across space and time and find out your Persona!</p>
-    <!-- Add an input field for the user's name -->
-    <!--input type="text" id="user-name" placeholder="Your Name"-->
-    <img src="images/main.gif" class="top-image">
-    <button type="button" id="start-button" class="start-button" @onclick="Start">Start</button>
-    <br>
-    <p1>A fun personality quiz inspired by MBTI types, Innate personalities, Cake resume, etc.</p1>
-    <p1>Made by I-see WJ</p1>
-</div>
+@if (Form == EnumCosmos.Question)
+{
+    <div class="start-page" id="start-page">
+        <!--h1>What cosmic ingredient do you taste like?</h1-->
+        <h1>Cosmos Persona</h1>
+        <p>Enter a journey across space and time and find out your Persona!</p>
+        <!-- Add an input field for the user's name -->
+        <!--input type="text" id="user-name" placeholder="Your Name"-->
+        <img src="images/main.gif" class="top-image">
+        <button type="button" id="start-button" class="start-button" @onclick="Start">Start</button>
+        <br>
+        <p1>A fun personality quiz inspired by MBTI types, Innate personalities, Cake resume, etc.</p1>
+        <p1>Made by I-see WJ</p1>
+    </div>
+}
+else
+{
+    <div class="quiz-page" id="quiz-page" style="display: none;">
+        @if(QuestionData is not null)
+        {
+            <div id="quiz">
+                <p>QuestionData.Question</p>
+                <img src="@(QuestionData.Image)" alt="Question @QuestionNo">
+                @* @if() *@
+                <button class="large-rectangular" value="" id=""></button>
+                <!-- Questions with images, and choice buttons will be generated here dynamically using JavaScript -->
+            </div>
+        }
+        <footer>
+            <a href="https://docs.google.com/document/d/1GKvwQOTK8jjRFDShpuLD_w9_VGU_IVxfSglJngvNWLU/edit?usp=sharing" target="_blank" style="font-size: 10px; text-decoration: none;">&copy; 2024 I-see Warisa Jaidee</a>
+        </footer>
+    </div>
+}
 
 @code {
+    private EnumCosmos Form = EnumCosmos.Question;
+    private int QuestionNo = 1;
+    private static CosmosQuestionAndAnswerModel Data = null;
+    private QuestionModel QuestionData = null;
     protected override async Task OnInitializedAsync()
     {
-        var data = await _service.GetData();
+        Data = await _service.GetData();
+        QuestionData = Data.questions[0];
     }
 
     private void Start()
     {
-
+        Form = EnumCosmos.Answer;
     }
 }

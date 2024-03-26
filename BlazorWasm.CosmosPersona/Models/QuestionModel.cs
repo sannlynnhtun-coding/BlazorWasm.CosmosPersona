@@ -2,9 +2,9 @@
 {
     public class QuestionModel
     {
-        public string question { get; set; }
-        public string image { get; set; }
-        public Answers answers { get; set; }
+        public string Question { get; set; }
+        public string Image { get; set; }
+        public Answers Answers { get; set; }
     }
 
     public class Answers
