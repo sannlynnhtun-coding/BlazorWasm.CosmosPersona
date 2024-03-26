@@ -1,0 +1,26 @@
+﻿@page "/"
+
+<div class="start-page" id="start-page">
+    <!--h1>What cosmic ingredient do you taste like?</h1-->
+    <h1>Cosmos Persona</h1>
+    <p>Enter a journey across space and time and find out your Persona!</p>
+    <!-- Add an input field for the user's name -->
+    <!--input type="text" id="user-name" placeholder="Your Name"-->
+    <img src="images/main.gif" class="top-image">
+    <button type="button" id="start-button" class="start-button" @onclick="Start">Start</button>
+    <br>
+    <p1>A fun personality quiz inspired by MBTI types, Innate personalities, Cake resume, etc.</p1>
+    <p1>Made by I-see WJ</p1>
+</div>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        var data = await _service.GetData();
+    }
+
+    private void Start()
+    {
+
+    }
+}
