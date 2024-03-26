@@ -1,11 +1,11 @@
 {
-  "name": "BlazorWasm.CosmosPersona",
-  "short_name": "BlazorWasm.CosmosPersona",
+  "name": "IseeJ - Cosmos Persona",
+  "short_name": "IseeJ - Cosmos Persona",
   "id": "./",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#03173d",
+  "theme_color": "#FFB997",
   "prefer_related_applications": false,
   "icons": [
     {
