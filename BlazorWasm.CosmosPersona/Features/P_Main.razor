@@ -1,5 +1,7 @@
 ﻿@page "/"
+@using BlazorWasm.CosmosPersona.Enum
 @using BlazorWasm.CosmosPersona.Models
+@using Newtonsoft.Json
 
 @if (Form == EnumCosmos.Question)
 {
@@ -18,17 +20,43 @@
 }
 else
 {
-    <div class="quiz-page" id="quiz-page" style="display: none;">
-        @if(QuestionData is not null)
-        {
-            <div id="quiz">
-                <p>QuestionData.Question</p>
+    <div class="quiz-page" id="quiz-page">
+        <div id="quiz">
+            @if (result is not null)
+            {
+                <div id="result" style="display: block;">
+                    <p>Feel free to share your result! #CosmosPersona</p>
+                    <div class="result-image">
+                        <img id="result-image" src="images/@result" alt="@result Image">
+                    </div>
+                    <!--p>Feedback & Enter Raffle!<a href="https://forms.gle/1SYvtZrZYcD9VtSf6" target="_blank">here</a></p-->
+                    <br>
+                    <p>Made by <a href="https://www.instagram.com/izonfalzo" target="_blank">@@izonfalzo</a></p>
+                    <p>Thanks, Bob <a href="https://www.instagram.com/avocadrawz" target="_blank">@@avocadrawz</a></p>
+                    <div class="hover-container">
+                        <span class="hover-text">Give feedback &amp; Enter Raffle! <a href="https://forms.gle/1SYvtZrZYcD9VtSf6" target="_blank">here</a></span>
+                        <span class="tooltip">help me improve this and win prizes!</span>
+                    </div>
+                    <a href="javascript:void();" onclick="@StartOver" rel="noopener noreferrer"><button class="do-not-press-button">Time Machine</button></a>
+                    <div class="result-content">
+                        <div class="result-text">
+                        </div>
+                    </div>
+                </div>
+            }
+            else if (QuestionData is not null)
+            {
+                <p>@QuestionData.Question</p>
                 <img src="@(QuestionData.Image)" alt="Question @QuestionNo">
-                @* @if() *@
-                <button class="large-rectangular" value="" id=""></button>
+                @foreach (var answer in QuestionData.Answers)
+                {
+                    <button class="large-rectangular" type="button" onclick="@(() => Choose(answer))">
+                        @answer.Value
+                    </button>
+                }
                 <!-- Questions with images, and choice buttons will be generated here dynamically using JavaScript -->
-            </div>
-        }
+            }
+        </div>
         <footer>
             <a href="https://docs.google.com/document/d/1GKvwQOTK8jjRFDShpuLD_w9_VGU_IVxfSglJngvNWLU/edit?usp=sharing" target="_blank" style="font-size: 10px; text-decoration: none;">&copy; 2024 I-see Warisa Jaidee</a>
         </footer>
@@ -37,17 +65,84 @@ else
 
 @code {
     private EnumCosmos Form = EnumCosmos.Question;
-    private int QuestionNo = 1;
-    private static CosmosQuestionAndAnswerModel Data = null;
-    private QuestionModel QuestionData = null;
+    private int QuestionNo = 0;
+    private static CosmosQuestionAndAnswerModel? Data = null;
+    private QuestionModel? QuestionData = null;
+    private int maxQuestions = 0;
+    private string? result = null;
+
+    private List<KeyValueModel> ResultList = new List<KeyValueModel>
+    {
+        new KeyValueModel("E"),
+        new KeyValueModel("F"),
+        new KeyValueModel("I"),
+        new KeyValueModel("J"),
+        new KeyValueModel("N"),
+        new KeyValueModel("P"),
+        new KeyValueModel("S"),
+        new KeyValueModel("T"),
+    };
+
     protected override async Task OnInitializedAsync()
     {
         Data = await _service.GetData();
-        QuestionData = Data.questions[0];
+        maxQuestions = Data.questions.Count;
+        GetQuestion();
+    }
+
+    private void GetQuestion()
+    {
+        QuestionData = Data.questions[QuestionNo];
+    }
+
+    private void StartOver()
+    {
+        result = null;
+        QuestionNo = 0;
+        Form = EnumCosmos.Question;
     }
 
     private void Start()
     {
         Form = EnumCosmos.Answer;
+        GetQuestion();
+        StateHasChanged();
+    }
+
+    private void Choose(AnswerModel answer)
+    {
+        int index = ResultList.FindIndex(x => x.Key == answer.Key);
+        if (index > -1)
+        {
+            ResultList[index].Score++;
+
+            Console.WriteLine(JsonConvert.SerializeObject(new { Key = ResultList[index].Key, Score = ResultList[index].Score }));
+        }
+        QuestionNo++;
+        if (QuestionNo < maxQuestions)
+        {
+            GetQuestion();
+            StateHasChanged();
+        }
+        else
+        {
+            Console.WriteLine(JsonConvert.SerializeObject(ResultList));
+            Result();
+        }
+    }
+
+    private void Result()
+    {
+        var pairs = new string[] { "IE", "NS", "TF", "PJ" };
+        var key = string.Join("", pairs.Select((pair, i) =>
+        {
+            var options = pair.ToCharArray();
+            var scores = options.Select(x => ResultList.First(y => y.Key == x.ToString()).Score).ToList();
+            var index = scores.IndexOf(scores.Max());
+            var option = options[index];
+            return option;
+        }));
+        result = Data!.images.First(x => x.Key == key).Value;
+        StateHasChanged();
     }
 }

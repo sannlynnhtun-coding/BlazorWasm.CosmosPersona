@@ -1,0 +1,184 @@
+[
+  {
+    "question": "Q1/12: You're taking the bus on your way back home. It's been a loooong day, what are you thinking about?",
+    "image": "images/Q1.gif",
+    "answers": [
+      {
+        "key": "F",
+        "value": "I'm just so tired and can't wait to go home. Why do everyday feel the same..."
+      },
+      {
+        "key": "T",
+        "value": "Should I rest or work first when I get home? Most importantly, what's for dinner?"
+      }
+    ]
+  },
+  {
+    "question": "Q2/12: You look outside the windows, seems like it's going to rain soon. Suddenly everything turns into darkness!!",
+    "image": "images/Q2.gif",
+    "answers": [
+      {
+        "key": "J",
+        "value": "I don't remember this tunnel. *Pull out your phone to look at the map*"
+      },
+      {
+        "key": "P",
+        "value": "*Turn around to see the other's reaction* Should I ask the driver what's going on?"
+      }
+    ]
+  },
+  {
+    "question": "Q3/12: Before you can do anything, the bus stops and everything around you floats up!",
+    "image": "images/Q3.gif",
+    "answers": [
+      {
+        "key": "S",
+        "value": "Ok this is weird, am I dreaming? *pinch your arm*"
+      },
+      {
+        "key": "N",
+        "value": "Is this a prank? Am I getting kidnapped by aliens?!"
+      }
+    ]
+  },
+  {
+    "question": "Q4/12: Amidst the surprise, your eyes catch something drifting past the window.",
+    "image": "images/Q4.gif",
+    "answers": [
+      {
+        "key": "F",
+        "value": "Woahhh...so many cats! How cute!! I wanna give them a hug!"
+      },
+      {
+        "key": "T",
+        "value": "Cats? In space? That's kinda odd... How do they survive out there?!"
+      }
+    ]
+  },
+  {
+    "question": "Q5/12: 'Welcome Aboard!' a small robot appears and annouces, 'We will reach our destination in 5 months 6 days and 2 hours!'",
+    "image": "images/Q5.gif",
+    "answers": [
+      {
+        "key": "P",
+        "value": "Cool! A space cruise?! Where are we going? Do I get a spacesuit? This is so exciting!"
+      },
+      {
+        "key": "J",
+        "value": "Hey uh...Am I in space? How did I get here? When can I go home?! Why.."
+      }
+    ]
+  },
+  {
+    "question": "Q6/12: The robot just points to the back of the bus which now looks more like inside of a spaceship! What do you want to see first?",
+    "image": "images/Q6.gif",
+    "answers": [
+      {
+        "key": "E",
+        "value": "Solar system themed fountain in the middle. I want to take pictures with it."
+      },
+      {
+        "key": "I",
+        "value": "Cozy corner with a massaging chair. I need to sit down and process."
+      }
+    ]
+  },
+  {
+    "question": "Q7/12: On the way back to your seat, you are surrounded by cats! 'Unauthorized passenger detected, CAPTURE CAPTURE!'",
+    "image": "images/Q7.gif",
+    "answers": [
+      {
+        "key": "S",
+        "value": "Woah! What do you mean unauthorized? I'm the passenger of this cruise!"
+      },
+      {
+        "key": "N",
+        "value": "Ok, I have no idea what's going on. How about we calm down and chat for a bit?"
+      }
+    ]
+  },
+  {
+    "question": "Q8/12: Suddenly, the robot glides in, it whispers something to the cats that makes them stop.",
+    "image": "images/Q8.gif",
+    "answers": [
+      {
+        "key": "E",
+        "value": "Bob!! Thank you! You come to save me, right?"
+      },
+      {
+        "key": "I",
+        "value": "HA! That's right! Back off, cats! Am I safe to go now?!"
+      }
+    ]
+  },
+  {
+    "question": "Q9/12: The robot transforms into a giant vacuum cleaner, the cats use it to point at you!",
+    "image": "images/Q9.gif",
+    "answers": [
+      {
+        "key": "J",
+        "value": "Throw your coat at them as distraction, run towards the big green 'EXIT' sign!"
+      },
+      {
+        "key": "P",
+        "value": "Run in random direction, confuse them, blend in with the crowd!"
+      }
+    ]
+  },
+  {
+    "question": "Q10/12: You run past the gift shop. Looks like you got rid of them. It wouldn't hurt to get some souvenirs, right?",
+    "image": "images/Q10.gif",
+    "answers": [
+      {
+        "key": "F",
+        "value": "Get the Jupiter headphone, wear it to hear people's thoughts!"
+      },
+      {
+        "key": "T",
+        "value": "Get the Mars watch, turn it and you can time travel!"
+      }
+    ]
+  },
+  {
+    "question": "Q11/12: The giant vacuum cleaner suddenly emerges in front of you! You're sucked into its vortex!!!",
+    "image": "images/Q11.gif",
+    "answers": [
+      {
+        "key": "S",
+        "value": "It's ok, this is just a dream! I'll wake up soon! *close your eyes and give up*"
+      },
+      {
+        "key": "N",
+        "value": "I'll find the way out! Maybe there are some secret doors! *look around for the way out*"
+      }
+    ]
+  },
+  {
+    "question": "Q12/12: After a moment of darkness, you find yourself back in the bus. 'Are you alright?' the ticket inspector asks",
+    "image": "images/Q12.gif",
+    "answers": [
+      {
+        "key": "I",
+        "value": "Woah! I thought I was captured... Nevermind! I'm alright now, I guess? *panic in silence*"
+      },
+      {
+        "key": "E",
+        "value": "You won't believe it...I think I just had the wildest dream ever! *tell him about your space adventure*"
+      }
+    ]
+  },
+  {
+    "question": "When you look up again, the inspector's already gone. You glance outside the window, darkness creeps in as the bus enters another tunnel...",
+    "image": "images/Q13.gif",
+    "answers": [
+      {
+        "key": "K",
+        "value": "Wait...was that Bob?"
+      },
+      {
+        "key": "U",
+        "value": "Oh no...Do I have to go through this again?"
+      }
+    ]
+  }
+]

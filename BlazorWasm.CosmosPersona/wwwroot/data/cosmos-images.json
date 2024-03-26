@@ -1,0 +1,66 @@
+[
+  {
+    "Key": "ISTJ",
+    "Value": "1DE.png"
+  },
+  {
+    "Key": "ISFJ",
+    "Value": "2light.png"
+  },
+  {
+    "Key": "INFJ",
+    "Value": "3UFO.png"
+  },
+  {
+    "Key": "INTJ",
+    "Value": "4nebula.png"
+  },
+  {
+    "Key": "ISTP",
+    "Value": "5comet.png"
+  },
+  {
+    "Key": "ISFP",
+    "Value": "6ST.png"
+  },
+  {
+    "Key": "INFP",
+    "Value": "7DM.png"
+  },
+  {
+    "Key": "INTP",
+    "Value": "8met.png"
+  },
+  {
+    "Key": "ESTP",
+    "Value": "9BH.png"
+  },
+  {
+    "Key": "ESFP",
+    "Value": "10Sn.png"
+  },
+  {
+    "Key": "ENFP",
+    "Value": "11Grav.png"
+  },
+  {
+    "Key": "ENTP",
+    "Value": "12hand.png"
+  },
+  {
+    "Key": "ESTJ",
+    "Value": "13sat.png"
+  },
+  {
+    "Key": "ESFJ",
+    "Value": "14sun.png"
+  },
+  {
+    "Key": "ENFJ",
+    "Value": "15gal.png"
+  },
+  {
+    "Key": "ENTJ",
+    "Value": "16rocket.png"
+  }
+]
